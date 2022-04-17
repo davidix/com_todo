@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.4" method="upgrade">
+	<name>com_todo</name>
+	<creationDate>2022 april 17</creationDate>
+	<author></author>
+	<authorEmail></authorEmail>
+	<authorUrl></authorUrl>
+	<copyright></copyright>
+	<license></license>
+	<version>1.0.8</version>
+	<description>COM_TODO_XML_DESCRIPTION</description>
+	
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates</schemapath>
+		</schemas>
+	</update>
+	
+	<files folder="site">
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>todo.php</filename>
+		<filename>router.php</filename>
+		<folder>controllers</folder>
+		<folder>helpers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
+	
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB.com_todo.ini</language>
+		<language tag="fa-IR">language/fa-IR.com_todo.ini</language>
+	</languages>
+	
+	<administration>
+		<menu link="index.php?option=com_todo">Todo</menu>
+		<submenu>
+			<menu link="option=com_todo&amp;view=categories">categories</menu>
+			<menu link="option=com_todo&amp;view=tasks">Tasks</menu>
+		</submenu>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>todo.php</filename>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>sql</folder>
+			<folder>views</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB.com_todo.ini</language>
+			<language tag="en-GB">language/en-GB.com_todo.sys.ini</language>
+			<language tag="fa-IR">language/fa-IR.com_todo.ini</language>
+			<language tag="fa-IR">language/fa-IR.com_todo.sys.ini</language>
+		</languages>
+	</administration>
+	
+	<updateservers>
+	</updateservers>
+</extension>
